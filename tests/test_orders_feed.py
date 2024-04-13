@@ -23,7 +23,7 @@ class TestOrderFeed:
         driver = request.getfixturevalue(any_driver)
         order_feed_page = OrdersFeedPage(driver)
         order_feed_page.login()
-        order_feed_page.create_order(driver)
+        order_feed_page.create_order()
         assert order_feed_page.get_order_number() in order_feed_page.get_orders_numbers()
 
     @allure.title('Проверка увеличения счетчика заказов, выполненных за все время"')
@@ -37,7 +37,7 @@ class TestOrderFeed:
         order_feed_page.go_to_order_feed()
         before = order_feed_page.get_count_all_time()
         order_feed_page.go_to_constructor()
-        order_feed_page.create_order(driver)
+        order_feed_page.create_order()
         order_feed_page.go_to_orders_feed_from_order_info()
         after = order_feed_page.get_count_all_time()
         assert int(after) == int(before) + 1
@@ -53,7 +53,7 @@ class TestOrderFeed:
         order_feed_page.go_to_order_feed()
         before = order_feed_page.get_count_today()
         order_feed_page.go_to_constructor()
-        order_feed_page.create_order(driver)
+        order_feed_page.create_order()
         order_feed_page.go_to_orders_feed_from_order_info()
         after = order_feed_page.get_count_today()
         assert int(after) == int(before) + 1
@@ -66,5 +66,5 @@ class TestOrderFeed:
         driver = request.getfixturevalue(any_driver)
         order_feed_page = OrdersFeedPage(driver)
         order_feed_page.login()
-        order_feed_page.create_order(driver)
+        order_feed_page.create_order()
         assert order_feed_page.get_order_number() in order_feed_page.get_orders_in_work()

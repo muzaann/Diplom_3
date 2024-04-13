@@ -11,7 +11,8 @@ class MainPageLocator:
     CLOSE_BUTTON = By.XPATH, ".//button[@type='button']"
     WINDOW_INFO_INGREDIENT = By.XPATH, "//section[contains(@class, 'Modal_modal')]"
     CART = By.XPATH, "//span[text()= 'Перетяните булочку сюда (верх)']"
-    COUNTER = By.XPATH, "//*[@id='root']/div/main/section[1]/div[2]/ul[1]/a[1]/div[1]/p"
+    COUNTER = By.XPATH, "//a[@href= '/ingredient/61c0c5a71d1f82001bdaaa6d']/div/p[contains(@class, 'counter')]"
     ORDER_BUTTON = By.XPATH, "//button[text()= 'Оформить заказ']"
     ID_ORDER = By.XPATH, "//p[text()= 'идентификатор заказа']"
+
 

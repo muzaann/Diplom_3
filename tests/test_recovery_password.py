@@ -3,7 +3,6 @@ import pytest
 from pages.login_page import LoginPage
 
 
-
 class TestRecovery:
     @allure.title('Проверка перехода на страницу восстановления пароля')
     @allure.description('Кликаем на кнопку "Личный кабинет", кликаем на кнопку "Восстановить пароль", \

@@ -52,7 +52,7 @@ class TestMainPage:
     def test_add_ingredients(self, request, any_driver):
         driver = request.getfixturevalue(any_driver)
         main_page = MainPage(driver)
-        main_page.add_bun_to_cart(driver)
+        main_page.add_bun_to_cart()
         assert main_page.check_ingredients_counter() == '2'
 
     @allure.title('Проверка оформления заказа залогиненым пользователем')
@@ -63,5 +63,5 @@ class TestMainPage:
         driver = request.getfixturevalue(any_driver)
         main_page = MainPage(driver)
         main_page.login()
-        main_page.add_bun_to_cart(driver)
+        main_page.add_bun_to_cart()
         assert main_page.check_order() == 'идентификатор заказа'
